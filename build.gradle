@@ -1,0 +1,67 @@
+plugins {
+    id("org.springframework.boot") version "3.2.2"
+    id("io.spring.dependency-management") version "1.1.4"
+    id("java")
+    id("org.openrewrite.rewrite") version("7.1.5")
+}
+
+rewrite {
+    activeRecipe("com.yourorg.AddDependencyExample")
+    setExportDatatables(true)
+}
+
+repositories {
+    mavenCentral()
+}
+
+group = "com.example"
+version = "1.0.0"
+java.sourceCompatibility = JavaVersion.VERSION_17
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.openrewrite:rewrite-java:8.1.0'  // Core Java support
+    implementation 'org.openrewrite:rewrite-maven:8.1.0' // For working with Maven projects
+    implementation 'org.openrewrite:rewrite-gradle:8.1.0'
+    // Spring Boot Starter Integration
+    implementation("org.springframework.boot:spring-boot-starter-integration")
+
+    // Spring Boot Web (for HTTP flow)
+    implementation("org.springframework.boot:spring-boot-starter-web")
+
+    // Spring Integration File Adapter
+    implementation("org.springframework.integration:spring-integration-file")
+
+    // Spring Integration HTTP Adapter
+    implementation("org.springframework.integration:spring-integration-http")
+
+    // Spring Boot Actuator for monitoring
+    implementation("org.springframework.boot:spring-boot-starter-actuator")
+
+    // Logging
+    implementation("org.slf4j:slf4j-api")
+    implementation("ch.qos.logback:logback-classic")
+
+    // Test dependencies
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("org.springframework.integration:spring-integration-test")
+    implementation("org.springframework.boot:spring-boot-starter-integration")
+    implementation("org.springframework.boot:spring-boot-starter-web")
+    implementation("org.springframework.integration:spring-integration-file")
+    implementation("org.springframework.integration:spring-integration-jmx")
+    implementation("org.slf4j:slf4j-api")
+    implementation("ch.qos.logback:logback-classic")
+   // implementation group: 'org.springframework.integration', name: 'spring-integration-java-dsl', version: '1.2.3.RELEASE'
+
+    implementation "com.google.guava:guava:29.1"
+    implementation "org.apache.camel:camel-bindy:3.22.1"
+    implementation "org.apache.camel:camel-core:3.22.1"
+    implementation "org.apache.camel:camel-jdbc:3.22.1"
+    implementation "org.apache.camel:camel-management:3.20.0"
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
+    testImplementation("org.springframework.integration:spring-integration-test")
+}
+
