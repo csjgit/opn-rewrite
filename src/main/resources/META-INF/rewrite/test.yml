@@ -1,0 +1,5 @@
+type: specs.openrewrite.org/v1beta/recipe
+name: com.example.SimpleRecipe
+description: Appends a comment to every Java class declaration.
+recipeList:
+  - com.example.SimpleJavaRewriteRecipe
